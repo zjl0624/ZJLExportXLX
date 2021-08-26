@@ -13,6 +13,7 @@
 		140DB3BA26D336CF007CB71A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 140DB3B826D336CF007CB71A /* LaunchScreen.storyboard */; };
 		140DB3BD26D336CF007CB71A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 140DB3BC26D336CF007CB71A /* main.m */; };
 		140DB3E626D39F43007CB71A /* ZJLExportXLX.m in Sources */ = {isa = PBXBuildFile; fileRef = 140DB3E526D39F42007CB71A /* ZJLExportXLX.m */; };
+		70820CA0A0E2813B0A49C820 /* Pods_ZJLExportXLX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C21250BBAC41C52BB49825 /* Pods_ZJLExportXLX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,9 @@
 		140DB3BC26D336CF007CB71A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		140DB3E426D39F42007CB71A /* ZJLExportXLX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJLExportXLX.h; sourceTree = "<group>"; };
 		140DB3E526D39F42007CB71A /* ZJLExportXLX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJLExportXLX.m; sourceTree = "<group>"; };
+		3FD9D52DEA8699E11606AF3A /* Pods-ZJLExportXLX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJLExportXLX.release.xcconfig"; path = "Target Support Files/Pods-ZJLExportXLX/Pods-ZJLExportXLX.release.xcconfig"; sourceTree = "<group>"; };
+		6148935E898B4EC97B23D853 /* Pods-ZJLExportXLX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJLExportXLX.debug.xcconfig"; path = "Target Support Files/Pods-ZJLExportXLX/Pods-ZJLExportXLX.debug.xcconfig"; sourceTree = "<group>"; };
+		C3C21250BBAC41C52BB49825 /* Pods_ZJLExportXLX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZJLExportXLX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,17 +38,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70820CA0A0E2813B0A49C820 /* Pods_ZJLExportXLX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01A980724D84E83EA41601AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6148935E898B4EC97B23D853 /* Pods-ZJLExportXLX.debug.xcconfig */,
+				3FD9D52DEA8699E11606AF3A /* Pods-ZJLExportXLX.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		140DB39E26D336C5007CB71A = {
 			isa = PBXGroup;
 			children = (
 				140DB3A926D336C6007CB71A /* ZJLExportXLX */,
 				140DB3A826D336C6007CB71A /* Products */,
+				01A980724D84E83EA41601AC /* Pods */,
+				E798F107DF2BD8F760D8FB2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +98,14 @@
 			path = ZJLExportXLX;
 			sourceTree = "<group>";
 		};
+		E798F107DF2BD8F760D8FB2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3C21250BBAC41C52BB49825 /* Pods_ZJLExportXLX.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,9 +113,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 140DB3C026D336CF007CB71A /* Build configuration list for PBXNativeTarget "ZJLExportXLX" */;
 			buildPhases = (
+				788B3A480920EA0568F3360A /* [CP] Check Pods Manifest.lock */,
 				140DB3A326D336C6007CB71A /* Sources */,
 				140DB3A426D336C6007CB71A /* Frameworks */,
 				140DB3A526D336C6007CB71A /* Resources */,
+				E4F80D65A5E49DDB61ADD067 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -143,6 +170,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		788B3A480920EA0568F3360A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZJLExportXLX-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4F80D65A5E49DDB61ADD067 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZJLExportXLX/Pods-ZJLExportXLX-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZJLExportXLX/Pods-ZJLExportXLX-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZJLExportXLX/Pods-ZJLExportXLX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		140DB3A326D336C6007CB71A /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		140DB3C126D336CF007CB71A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6148935E898B4EC97B23D853 /* Pods-ZJLExportXLX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -303,6 +373,7 @@
 		};
 		140DB3C226D336CF007CB71A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FD9D52DEA8699E11606AF3A /* Pods-ZJLExportXLX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
