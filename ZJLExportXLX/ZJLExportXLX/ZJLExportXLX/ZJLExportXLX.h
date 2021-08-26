@@ -10,7 +10,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZJLExportXLX : NSObject
++ (instancetype)sharedInstance;
 + (void)createXLXWithTitleArray:(NSArray *)titleArray contentArray:(NSArray<NSArray *> *)contentArray;
+- (void)createXLXByLibXlsxwriterWithTitleArray:(NSArray *)titleArray contentArray:(NSArray<NSArray *> *)contentArray;
+
 @end
 
 NS_ASSUME_NONNULL_END
