@@ -68,6 +68,13 @@ static lxw_worksheet *worksheet;
     NSLog(@"文件路径：\n%@",filePath);
     workbook  = workbook_new([filePath UTF8String]);// 创建新xlsx文件，路径需要转成c字符串
     worksheet = workbook_add_worksheet(workbook, NULL);// 创建sheet
+    lxw_format *mainTitleFormat = workbook_add_format(workbook);
+    format_set_bold(mainTitleFormat);
+    format_set_align(mainTitleFormat, LXW_ALIGN_CENTER);// 水平居中
+    format_set_align(mainTitleFormat, LXW_ALIGN_VERTICAL_CENTER);//垂直居中
+//    worksheet_freeze_panes(worksheet,3,1);
+//    worksheet_write_string(worksheet, 0, 0, "大标题", mainTitleFormat);
+    worksheet_merge_range(worksheet, 0, 0, 0, 2, "大标题", mainTitleFormat);//合并第几行第几列到第几行第几列的单元格
     worksheet_set_column(worksheet,COLS("A:A"), 50, NULL);//设置列宽
     // 添加格式
     lxw_format *titleFormat = workbook_add_format(workbook);
@@ -78,12 +85,12 @@ static lxw_worksheet *worksheet;
     
     
     [titleArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        worksheet_write_string(worksheet, 0, idx, [obj UTF8String], titleFormat);
+        worksheet_write_string(worksheet, 1, idx, [obj UTF8String], titleFormat);
     }];
     
     [contentArray enumerateObjectsUsingBlock:^(NSArray * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj enumerateObjectsUsingBlock:^(id  _Nonnull obj1, NSUInteger idx1, BOOL * _Nonnull stop1) {
-            worksheet_write_string(worksheet, (int)idx + 1, idx1, [obj1 UTF8String], NULL);
+            worksheet_write_string(worksheet, (int)idx + 2, idx1, [obj1 UTF8String], NULL);
         }];
     }];
     //关闭，保存文件
